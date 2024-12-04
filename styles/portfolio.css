@@ -1,0 +1,202 @@
+/* Estilo general */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Estilo general del navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre el logo y el menú */
+    align-items: center; /* Centrado vertical */
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8); /* Fondo del navbar */
+    flex-wrap: wrap; /* Permite ajustar los elementos si no caben */
+    overflow: hidden; /* Evita que los elementos se salgan del contenedor */
+}
+
+/* Estilo del logo */
+.logo img {
+    width: 50px; /* Tamaño ajustado del logo */
+    height: auto;
+    display: inline-block;
+}
+
+/* Estilo del menú */
+#navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Espaciado entre los elementos del menú */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Permite ajustar los elementos del menú en varias filas */
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+    white-space: nowrap; /* Evita que el texto del menú se divida en varias líneas */
+}
+
+#navbar a:hover {
+    color: #ffcc00;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+    }
+
+    #navbar ul {
+        flex-direction: column; /* Coloca las opciones del menú en columna */
+        gap: 10px; /* Ajusta el espaciado */
+        text-align: center;
+    }
+
+    #navbar a {
+        font-size: 0.9em; /* Reduce ligeramente el tamaño del texto */
+    }
+
+    .logo img {
+        width: 40px; /* Reduce el tamaño del logo en pantallas pequeñas */
+    }
+}
+
+#hero {
+    height: 100vh;
+    background: linear-gradient(to right, #000428, #004e92);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#hero h1 {
+    font-size: 3em;
+}
+
+#hero .btn {
+    background: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+#hero .btn:hover {
+    background: #000;
+    color: #ffcc00;
+}
+
+/* Estilo de habilidades */
+#habilidades {
+    padding: 50px;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+.skill-bars .skill {
+    margin-bottom: 20px;
+}
+
+.skill .bar {
+    background: #ddd;
+    height: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.skill .bar span {
+    display: block;
+    height: 100%;
+    background: #ffcc00;
+    animation: grow 2s ease-in-out;
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Proyectos */
+#proyectos {
+    padding: 50px;
+    text-align: center;
+    
+    .hospitalario-img {
+        width: 100%; /* Ajusta el ancho al contenedor */
+        height: 200px; /* Altura fija */
+        object-fit: cover; /* Recorta la imagen para que encaje bien */
+        border-radius: 5px 5px 0 0; /* Bordes superiores redondeados */
+    }
+}
+
+/* Contacto */
+#contacto {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado uniforme */
+    align-items: center; /* Centrar elementos */
+}
+
+#contacto form input,
+#contacto form textarea {
+    width: 100%; /* Ajusta el ancho al formulario */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; /* Evita que el padding afecte el tamaño */
+}
+
+#contacto form textarea {
+    resize: none; /* Desactiva el cambio de tamaño manual */
+    height: 100px; /* Tamaño más proporcionado */
+}
+
+#contacto form button {
+    background: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#contacto form button:hover {
+    background: #000;
+    color: #ffcc00;
+}
+
+.redes a img {
+    max-width: 50px; /* Tamaño máximo */
+    max-height: 50px; /* Tamaño máximo */
+    width: auto; /* Ajuste proporcional */
+    height: auto; /* Ajuste proporcional */
+    transition: transform 0.3s;
+    border-radius: 10%; /* Opcional: bordes redondeados */
+}
+
+.redes a img:hover {
+    transform: scale(1.2); /* Efecto de zoom */
+}

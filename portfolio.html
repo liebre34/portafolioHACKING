@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav id="navbar">
+        <div class="logo">
+            <img src="assets/logo-lg.jpg" alt="LG Logo">
+        </div>
+        <ul>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Hola, soy <span class="nombre">Luis Jacinto</span></h1>
+        <p>Ingeniero en Sistemas | Apasionado por la CyberSecurity</p>
+        <a href="#contacto" class="btn">Contáctame</a>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="skill-bars">
+            <div class="skill">
+                <p>HTML</p>
+                <div class="bar"><span style="width: 90%;"></span></div>
+            </div>
+            <div class="skill">
+                <p>CSS</p>
+                <div class="bar"><span style="width: 85%;"></span></div>
+            </div>
+            <div class="skill">
+                <p>JavaScript</p>
+                <div class="bar"><span style="width: 80%;"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos">
+        <h2>Proyectos destacados</h2>
+        <div class="proyectos-container">
+            <!-- Proyecto 1 -->
+            <div class="proyecto">
+                <img src="assets/hospitalario-screenshot.png" alt="Hospitalario.mx" style="width: 100%; height: auto; object-fit: contain;">
+                <div class="info">
+                    <h3>Proyecto 1: Hospitalario.mx</h3>
+                    <p>Plataforma enfocada en soluciones hospitalarias y médicas.</p>
+                    <ul>
+                        <li>Venta de equipos médicos.</li>
+                        <li>Catálogo extenso de productos.</li>
+                        <li>Diseño responsivo y profesional.</li>
+                    </ul>
+                    <a href="https://www.hospitalario.mx" target="_blank" class="btn">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="proyecto">
+                <img src="assets/mccsolutions-screenshot.png" alt="MCC Solutions" class="mccsolutions-img"style="width: 100%; height: auto; object-fit: contain;">
+                <div class="info">
+                    <h3>Proyecto 2: MCC Solutions</h3>
+                    <p>Soluciones empresariales y tecnológicas para diferentes industrias.</p>
+                    <ul>
+                        <li>Servicios personalizados.</li>
+                        <li>Consultoría en TI.</li>
+                        <li>Interfaz intuitiva y moderna.</li>
+                    </ul>
+                    <a href="https://www.mccsolutions.com.mx" target="_blank" class="btn">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="proyecto">
+                <img src="assets/alinsumos-screenshot.png" alt="Alinsumos" style="width: 100%; height: auto; object-fit: contain;">
+                <div class="info">
+                    <h3>Proyecto 3: Alinsumos</h3>
+                    <p>Tienda online de insumos industriales y comerciales.</p>
+                    <ul>
+                        <li>Gestión eficiente de inventarios.</li>
+                        <li>Compra directa desde la plataforma.</li>
+                        <li>Atención al cliente personalizada.</li>
+                    </ul>
+                    <a href="https://www.alinsumos.com.mx" target="_blank" class="btn">Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <!-- Redes sociales -->
+        <div class="redes">
+            <a href="https://www.linkedin.com/in/luis-jacinto-436b0a217" target="_blank">
+                <img src="assets/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+        <!-- Formulario -->
+        <form id="contact-form">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <textarea placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script src="scripts/portfolio.js"></script>
+</body>
+</html>

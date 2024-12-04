@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritorio Retro</title>
+    <link rel="stylesheet" href="styles/retroDesk.css">
+</head>
+<body>
+    <div id="desktop">
+        <!-- Ícono de la papelera -->
+        <div class="icon" id="trash">
+            <img src="assets/basura.png" alt="Papelera">
+            <p>Papelera</p>
+        </div>
+
+        <!-- Ícono de la carpeta -->
+        <div class="icon" id="personal-info">
+            <img src="assets/carpeta.png" alt="Info Personal">
+            <p>Info Personal</p>
+        </div>
+
+        <!-- Ventana emergente -->
+        <div id="popup">
+            <div class="popup-header">
+                <span>Simulación de Hackeo</span>
+                <button id="close-popup">X</button>
+            </div>
+            <div class="popup-body">
+                <p>Hackeando...</p>
+                <div id="hack-animation"></div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/retroDesk.js"></script>
+</body>
+</html>
