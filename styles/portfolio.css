@@ -139,12 +139,6 @@ body {
     padding: 50px;
     text-align: center;
     
-    .hospitalario-img {
-        width: 100%; /* Ajusta el ancho al contenedor */
-        height: 200px; /* Altura fija */
-        object-fit: cover; /* Recorta la imagen para que encaje bien */
-        border-radius: 5px 5px 0 0; /* Bordes superiores redondeados */
-    }
 }
 
 /* Contacto */
@@ -199,4 +193,47 @@ body {
 
 .redes a img:hover {
     transform: scale(1.2); /* Efecto de zoom */
+}
+/* Estilo para la barra de navegación */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Fondo negro */
+    padding: 10px 20px; /* Espaciado interno */
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el menú quede encima del contenido */
+}
+
+/* Estilo para la lista del menú */
+#navbar ul {
+    display: flex; /* Muestra los elementos en línea */
+    list-style: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para cada elemento del menú */
+#navbar ul li {
+    margin: 0 15px; /* Espaciado entre elementos */
+}
+
+/* Estilo para los enlaces del menú */
+#navbar ul li a {
+    text-decoration: none; /* Quita el subrayado */
+    color: #00ff00; /* Color verde neon */
+    font-weight: bold;
+    transition: color 0.3s; /* Animación de color */
+}
+
+/* Efecto hover */
+#navbar ul li a:hover {
+    color: #ffffff; /* Cambia el color a blanco al pasar el mouse */
+}
+
+/* Estilo para el logo */
+#navbar .logo img {
+    height: 40px; /* Ajusta el tamaño del logo */
 }
