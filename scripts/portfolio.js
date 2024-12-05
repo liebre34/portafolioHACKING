@@ -20,3 +20,29 @@ document.querySelectorAll('#navbar a').forEach(link => {
     });
 });
 
+function mostrarDetalles(id) {
+    // Cierra todas las secciones de detalles abiertas
+    const detalles = document.querySelectorAll('.detalles-ocultos');
+    detalles.forEach(detalle => {
+        if (detalle.id !== id) {
+            detalle.classList.remove('detalles-activos');
+        }
+    });
+
+    // Alterna el estado de la sección seleccionada
+    const detalleSeleccionado = document.getElementById(id);
+    if (detalleSeleccionado.classList.contains('detalles-activos')) {
+        detalleSeleccionado.classList.remove('detalles-activos');
+    } else {
+        detalleSeleccionado.classList.add('detalles-activos');
+    }
+}
+
+function ocultarDetalles(id) {
+    // Cierra la sección seleccionada con animación
+    const detalleSeleccionado = document.getElementById(id);
+    detalleSeleccionado.classList.remove('detalles-activos');
+}
+
+
+

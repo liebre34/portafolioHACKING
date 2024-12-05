@@ -84,11 +84,13 @@ body {
     transform: scale(1.1); /* Efecto hover */
 }
 
-/* Hero Section */
+/* Contenedor Hero con efecto dinámico */
 #hero {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(to bottom, #001f3f, #001020);
+    position: relative;
+    background: linear-gradient(to bottom, #001f1f, #000); /* Fondo base */
+    overflow: hidden; /* Asegura que el efecto no sobresalga */
     animation: fadeIn 1.5s ease;
 }
 
@@ -97,12 +99,16 @@ body {
     color: #00ff00;
     animation: zoomIn 1s ease;
     text-shadow: 0px 0px 10px #00ff00;
+    z-index: 2; /* Siempre visible */
+    position: relative;
 }
 
 #hero p {
     font-size: 1.5em;
     color: #ffffff;
     margin: 20px 0;
+    z-index: 2; /* Siempre visible */
+    position: relative;
 }
 
 #hero .btn {
@@ -114,12 +120,45 @@ body {
     font-weight: bold;
     border-radius: 5px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 2; /* Siempre visible */
+    position: relative;
 }
 
 #hero .btn:hover {
     background-color: #ffffff;
     transform: scale(1.1);
 }
+
+/* Fondo animado de "lava" más visible */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 30%, #008000, transparent 50%),
+                radial-gradient(circle at 80% 70%, #00b300, transparent 50%),
+                radial-gradient(circle at 50% 50%, #004d00, transparent 50%),
+                radial-gradient(circle at 60% 40%, #666666, transparent 50%);
+    opacity: 0.9; /* Más visible */
+    animation: prominentLava 8s infinite alternate;
+    z-index: 1; /* Detrás del texto */
+}
+
+/* Animación del fondo más prominente */
+@keyframes prominentLava {
+    0% {
+        transform: translate(-20%, -20%) scale(1.5);
+    }
+    50% {
+        transform: translate(20%, 20%) scale(1.8);
+    }
+    100% {
+        transform: translate(-20%, -20%) scale(1.5);
+    }
+}
+
 
 /* Sobre mí */
 #sobre-mi {
@@ -240,13 +279,13 @@ body {
 }
 
 #contacto .redes a img {
-    height: 50px;
+    height: 30px; /* Reduce el tamaño del ícono */
     margin: 0 10px;
     transition: transform 0.3s ease;
 }
 
 #contacto .redes a img:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Mantiene el efecto hover */
 }
 
 #contacto form {
@@ -283,4 +322,130 @@ body {
 #contacto button:hover {
     background-color: #ffffff;
     transform: scale(1.1);
+}
+.detalles-ocultos {
+    display: none;
+    background-color: #111;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+    color: #fff;
+}
+
+.detalles-ocultos h4 {
+    color: #00ff00;
+    margin-bottom: 10px;
+}
+
+.detalles-ocultos ul {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.detalles-ocultos ul li {
+    margin-bottom: 10px;
+}
+
+.screenshots {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.screenshots img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.screenshots img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+}
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn.ir-al-sitio {
+    background-color: #008000; /* Verde oscuro */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn.ir-al-sitio:hover {
+    background-color: #00ff00; /* Verde brillante */
+    transform: scale(1.1);
+}
+/* Contenedor de botones solo para la sección de detalles */
+#detalle-hospitalario .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Estilo para los botones solo dentro de la sección de detalles */
+#detalle-hospitalario .btn {
+    background-color: #008000; /* Verde oscuro */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover para los botones dentro de la sección de detalles */
+#detalle-hospitalario .btn:hover {
+    background-color: #00ff00; /* Verde brillante */
+    transform: scale(1.1);
+}
+
+/* Botón "Cerrar" específico */
+#detalle-hospitalario .btn.cerrar {
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Botón "Ir al sitio web" específico */
+#detalle-hospitalario .btn.ir-al-sitio {
+    text-decoration: none; /* Sin subrayado */
+}
+#proyectos {
+    width: 100%;
+    clear: both; /* Limpia cualquier flotante previo */
+    padding-bottom: 50px; /* Espaciado inferior */
+}
+
+#contacto {
+    width: 100%;
+    margin-top: 30px;
+    clear: both; /* Asegura que comience en una nueva línea */
+    padding-top: 50px;
+    text-align: center;
+    background-color: #111; /* Asegura un fondo continuo */
+}
+/* Animación para mostrar detalles */
+.detalles-ocultos {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.detalles-activos {
+    max-height: 500px; /* Ajusta según el contenido */
+    opacity: 1;
+    overflow: visible;
 }

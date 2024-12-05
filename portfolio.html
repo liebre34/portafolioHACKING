@@ -9,18 +9,16 @@
 </head>
 <body>
     <!-- Barra de navegación -->
-<nav id="navbar">
-    <div class="logo">
-        <img src="assets/logo-lg.jpg" alt="LG Logo">
-    </div>
-    <ul>
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#sobre-mi">Sobre mi</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-</nav>
-
+    <nav id="navbar">
+        <div class="logo">
+            <img src="assets/logo-lg.jpg" alt="LG Logo">
+        </div>
+        <ul>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mi</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
     </nav>
 
     <!-- Hero Section -->
@@ -30,9 +28,8 @@
         <a href="#contacto" class="btn">Contáctame</a>
     </section>
 
-     <!-- Sobre mí -->
-      
-     <section id="sobre-mi">
+    <!-- Sobre mí -->
+    <section id="sobre-mi">
         <h2>Sobre mí</h2>
         <p>
             Soy un profesional apasionado por la ciberseguridad y los sistemas,
@@ -50,63 +47,111 @@
     <section id="proyectos">
         <h2>Proyectos destacados</h2>
         <div class="proyectos-container">
-            <!-- Proyecto 1 -->
-            <div class="proyecto">
-                <img src="assets/hospitalario-screenshot.png" alt="Hospitalario.mx" style="width: 100%; height: auto; object-fit: contain;">
-                <div class="info">
-                    <h3>Proyecto 1: Hospitalario.mx</h3>
-                    <p>Plataforma enfocada en soluciones hospitalarias y médicas.</p>
-                    <ul>
-                        <li>Venta de equipos médicos.</li>
-                        <li>Catálogo extenso de productos.</li>
-                        <li>Diseño responsivo y profesional.</li>
-                    </ul>
-                    <a href="https://www.hospitalario.mx" target="_blank" class="btn">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 2 -->
-            <div class="proyecto">
-                <img src="assets/mccsolutions-screenshot.png" alt="MCC Solutions" class="mccsolutions-img"style="width: 100%; height: auto; object-fit: contain;">
-                <div class="info">
-                    <h3>Proyecto 2: MCC Solutions</h3>
-                    <p>Soluciones empresariales y tecnológicas para diferentes industrias.</p>
-                    <ul>
-                        <li>Servicios personalizados.</li>
-                        <li>Consultoría en TI.</li>
-                        <li>Interfaz intuitiva y moderna.</li>
-                    </ul>
-                    <a href="https://www.mccsolutions.com.mx" target="_blank" class="btn">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 3 -->
-            <div class="proyecto">
-                <img src="assets/alinsumos-screenshot.png" alt="Alinsumos" style="width: 100%; height: auto; object-fit: contain;">
-                <div class="info">
-                    <h3>Proyecto 3: Alinsumos</h3>
-                    <p>Tienda online de insumos industriales y comerciales.</p>
-                    <ul>
-                        <li>Gestión eficiente de inventarios.</li>
-                        <li>Compra directa desde la plataforma.</li>
-                        <li>Atención al cliente personalizada.</li>
-                    </ul>
-                    <a href="https://www.alinsumos.com.mx" target="_blank" class="btn">Ver Proyecto</a>
-                </div>
+           <!-- Proyecto 1 -->
+           <div class="proyecto">
+            <img src="assets/hospitalario-screenshot.png" alt="Hospitalario.mx">
+            <div class="info">
+                <h3>Proyecto 1: Hospitalario.mx</h3>
+                <p>Plataforma enfocada en soluciones hospitalarias y médicas.</p>
+                <ul>
+                    <li>Venta de equipos médicos.</li>
+                    <li>Catálogo extenso de productos.</li>
+                    <li>Diseño responsivo y profesional.</li>
+                </ul>
+                <button class="btn ver-mas" onclick="mostrarDetalles('detalle-hospitalario')">Ver más</button>
             </div>
         </div>
-    </section>
+        
+        <div id="detalle-hospitalario" class="detalles-ocultos">
+            <h4>Detalles del Proyecto</h4>
+            <p>Diseño e implementación de una plataforma digital especializada en soluciones hospitalarias y médicas.</p>
+            <ul>
+                <li><b>Diseño e interfaz:</b> Creación de un diseño web responsivo y accesible.</li>
+                <li><b>Catálogo dinámico:</b> Desarrollo de un sistema de gestión para equipos médicos.</li>
+                <li><b>SEO técnico:</b> Aplicación de buenas prácticas de indexación en Google.</li>
+                <li><b>Seguridad avanzada:</b> Integración de certificados SSL y protección contra amenazas.</li>
+            </ul>
+            <div class="btn-container">
+                <button class="btn cerrar" onclick="ocultarDetalles('detalle-hospitalario')">Cerrar</button>
+                <a href="https://www.hospitalario.mx" target="_blank" class="btn ir-al-sitio">Ir al sitio web</a>
+            </div>
+        </div>
+
+<!-- Proyecto 2 -->
+<div class="proyecto">
+    <img src="assets/mccsolutions-screenshot.png" alt="MCC Solutions">
+    <div class="info">
+        <h3>Proyecto 2: MCC Solutions</h3>
+        <p>Plataforma tecnológica diseñada para optimizar procesos empresariales e industriales.</p>
+        <ul>
+            <li>Servicios especializados en tecnologías de la información.</li>
+            <li>Interfaz intuitiva y moderna.</li>
+            <li>Soluciones personalizadas para diferentes industrias.</li>
+        </ul>
+        <button class="btn ver-mas" onclick="mostrarDetalles('detalle-mcc')">Ver más</button>
+    </div>
+</div>
+
+<div id="detalle-mcc" class="detalles-ocultos">
+    <h4>Detalles del Proyecto</h4>
+    <p>Plataforma desarrollada para empresas industriales y comerciales, ofreciendo soluciones tecnológicas personalizadas.</p>
+    <ul>
+        <li><b>Consultoría:</b> Servicios especializados en tecnologías de la información.</li>
+        <li><b>Integración:</b> Gestión de sistemas empresariales desde una sola plataforma.</li>
+        <li><b>Optimización:</b> Mejora en procesos operativos y administrativos.</li>
+    </ul>
+    <div class="screenshots">
+        <img src="assets/mcc-screen1.png" alt="Screenshot 1">
+        <img src="assets/mcc-screen2.png" alt="Screenshot 2">
+    </div>
+    <div class="btn-container">
+        <button class="btn cerrar" onclick="ocultarDetalles('detalle-mcc')">Cerrar</button>
+        <a href="https://www.mccsolutions.com.mx" target="_blank" class="btn ir-al-sitio">Ir al sitio web</a>
+    </div>
+</div>
+
+<!-- Proyecto 3 -->
+<div class="proyecto">
+    <img src="assets/alinsumos-screenshot.png" alt="Alinsumos">
+    <div class="info">
+        <h3>Proyecto 3: Alinsumos</h3>
+        <p>Tienda online de insumos industriales y comerciales.</p>
+        <ul>
+            <li>Gestión eficiente de inventarios.</li>
+            <li>Compra directa desde la plataforma.</li>
+            <li>Atención al cliente personalizada.</li>
+        </ul>
+        <button class="btn ver-mas" onclick="mostrarDetalles('detalle-alinsumos')">Ver más</button>
+    </div>
+</div>
+
+<div id="detalle-alinsumos" class="detalles-ocultos">
+    <h4>Detalles del Proyecto</h4>
+    <p>Plataforma de comercio electrónico diseñada para optimizar la experiencia del cliente y maximizar la eficiencia operativa.</p>
+    <ul>
+        <li><b>Gestión de inventarios:</b> Control en tiempo real de productos.</li>
+        <li><b>Compra directa:</b> Simplificación del proceso de compra en línea.</li>
+        <li><b>Atención personalizada:</b> Integración de sistemas de atención al cliente.</li>
+    </ul>
+    <div class="screenshots">
+        <img src="assets/alinsumos-screen1.png" alt="Screenshot 1">
+        <img src="assets/alinsumos-screen2.png" alt="Screenshot 2">
+    </div>
+    <div class="btn-container">
+        <button class="btn cerrar" onclick="ocultarDetalles('detalle-alinsumos')">Cerrar</button>
+        <a href="https://www.alinsumos.com.mx" target="_blank" class="btn ir-al-sitio">Ir al sitio web</a>
+    </div>
+</div>
+
 
     <!-- Contacto -->
     <section id="contacto">
         <h2>Contacto</h2>
-        <!-- Redes sociales -->
         <div class="redes">
             <a href="https://www.linkedin.com/in/luis-jacinto-436b0a217" target="_blank">
                 <img src="assets/linkedin.png" alt="LinkedIn">
             </a>
         </div>
-        <!-- Formulario -->
         <form id="contact-form">
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="Tu correo electrónico" required>
