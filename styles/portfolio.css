@@ -1,239 +1,286 @@
-/* Estilo general */
+/* General */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    background-color: #000;
+    margin-top: 70px;
 }
 
-/* Estilo general del navbar */
+/* Animaciones generales */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 #navbar {
     display: flex;
-    justify-content: space-between; /* Espaciado entre el logo y el menú */
-    align-items: center; /* Centrado vertical */
+    justify-content: flex-start; /* Alinea el menú y el logo a la izquierda */
+    align-items: center;
+    background-color: #000;
     padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.8); /* Fondo del navbar */
-    flex-wrap: wrap; /* Permite ajustar los elementos si no caben */
-    overflow: hidden; /* Evita que los elementos se salgan del contenedor */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease;
+    gap: 30px; /* Espaciado entre el logo y las opciones del menú */
 }
 
-/* Estilo del logo */
-.logo img {
-    width: 50px; /* Tamaño ajustado del logo */
-    height: auto;
-    display: inline-block;
-}
-
-/* Estilo del menú */
 #navbar ul {
-    list-style: none;
     display: flex;
-    gap: 20px; /* Espaciado entre los elementos del menú */
+    list-style: none;
+    gap: 20px; /* Espaciado uniforme entre las opciones */
     margin: 0;
     padding: 0;
-    flex-wrap: wrap; /* Permite ajustar los elementos del menú en varias filas */
 }
 
-#navbar a {
-    color: #fff;
+#navbar ul li {
+    margin: 0;
+}
+
+#navbar ul li a {
     text-decoration: none;
-    font-size: 1em;
-    transition: color 0.3s;
-    white-space: nowrap; /* Evita que el texto del menú se divida en varias líneas */
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
 }
 
-#navbar a:hover {
-    color: #ffcc00;
+#navbar ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #00ff00;
 }
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 768px) {
-    #navbar {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        align-items: center; /* Centra los elementos */
-    }
-
-    #navbar ul {
-        flex-direction: column; /* Coloca las opciones del menú en columna */
-        gap: 10px; /* Ajusta el espaciado */
-        text-align: center;
-    }
-
-    #navbar a {
-        font-size: 0.9em; /* Reduce ligeramente el tamaño del texto */
-    }
-
-    .logo img {
-        width: 40px; /* Reduce el tamaño del logo en pantallas pequeñas */
-    }
+/* Logo */
+#navbar .logo {
+    margin-right: 20px; /* Espaciado entre el logo y el menú */
 }
 
+#navbar .logo img {
+    height: 40px;
+    max-width: 80px;
+    transition: transform 0.3s ease;
+}
+
+#navbar .logo img:hover {
+    transform: scale(1.1); /* Efecto hover */
+}
+
+/* Hero Section */
 #hero {
-    height: 100vh;
-    background: linear-gradient(to right, #000428, #004e92);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #001f3f, #001020);
+    animation: fadeIn 1.5s ease;
 }
 
 #hero h1 {
     font-size: 3em;
+    color: #00ff00;
+    animation: zoomIn 1s ease;
+    text-shadow: 0px 0px 10px #00ff00;
+}
+
+#hero p {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin: 20px 0;
 }
 
 #hero .btn {
-    background: #ffcc00;
-    color: #000;
+    display: inline-block;
     padding: 10px 20px;
-    border-radius: 5px;
+    background-color: #00ff00;
+    color: #000;
     text-decoration: none;
-    margin-top: 20px;
     font-weight: bold;
-    transition: background 0.3s, color 0.3s;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 #hero .btn:hover {
-    background: #000;
-    color: #ffcc00;
+    background-color: #ffffff;
+    transform: scale(1.1);
 }
 
-/* Estilo de habilidades */
-#habilidades {
-    padding: 50px;
+/* Sobre mí */
+#sobre-mi {
+    padding: 50px 20px;
     text-align: center;
-    background: #f4f4f4;
+    background-color: #111;
+    color: #ffffff;
+    animation: fadeIn 1.5s ease;
 }
 
-.skill-bars .skill {
+#sobre-mi h2 {
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #00ff00;
+    text-shadow: 0px 0px 10px #00ff00;
+    animation: zoomIn 1s ease;
 }
 
-.skill .bar {
-    background: #ddd;
-    height: 20px;
-    width: 100%;
-    position: relative;
-}
-
-.skill .bar span {
-    display: block;
-    height: 100%;
-    background: #ffcc00;
-    animation: grow 2s ease-in-out;
-}
-
-@keyframes grow {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+#sobre-mi p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #dddddd;
 }
 
 /* Proyectos */
 #proyectos {
-    padding: 50px;
+    padding: 50px 20px;
     text-align: center;
-    
+    background-color: #222;
+    color: #fff;
+}
+
+#proyectos h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.proyectos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.proyecto {
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+    transition: transform 0.3s ease;
+    animation: fadeIn 1.5s ease;
+}
+
+.proyecto:hover {
+    transform: scale(1.05);
+}
+
+.proyecto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.proyecto img:hover {
+    transform: scale(1.1);
+}
+
+.proyecto h3 {
+    color: #00ff00;
+    margin-bottom: 10px;
+}
+
+.proyecto p {
+    color: #ccc;
+}
+
+/* Botones de proyectos */
+.proyecto .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.proyecto .btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.1);
 }
 
 /* Contacto */
 #contacto {
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    animation: fadeIn 1.5s ease;
+}
+
+#contacto h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#contacto .redes {
+    margin-bottom: 20px;
+}
+
+#contacto .redes a img {
+    height: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+#contacto .redes a img:hover {
+    transform: scale(1.2);
+}
+
+#contacto form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaciado uniforme */
-    align-items: center; /* Centrar elementos */
+    gap: 15px;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-#contacto form input,
-#contacto form textarea {
-    width: 100%; /* Ajusta el ancho al formulario */
+#contacto input,
+#contacto textarea {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box; /* Evita que el padding afecte el tamaño */
+    background-color: #111;
+    color: #fff;
+    resize: none;
 }
 
-#contacto form textarea {
-    resize: none; /* Desactiva el cambio de tamaño manual */
-    height: 100px; /* Tamaño más proporcionado */
-}
-
-#contacto form button {
-    background: #ffcc00;
-    color: #000;
+#contacto button {
     padding: 10px 20px;
+    background-color: #00ff00;
+    color: #000;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#contacto form button:hover {
-    background: #000;
-    color: #ffcc00;
-}
-
-.redes a img {
-    max-width: 50px; /* Tamaño máximo */
-    max-height: 50px; /* Tamaño máximo */
-    width: auto; /* Ajuste proporcional */
-    height: auto; /* Ajuste proporcional */
-    transition: transform 0.3s;
-    border-radius: 10%; /* Opcional: bordes redondeados */
-}
-
-.redes a img:hover {
-    transform: scale(1.2); /* Efecto de zoom */
-}
-/* Estilo para la barra de navegación */
-#navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000; /* Fondo negro */
-    padding: 10px 20px; /* Espaciado interno */
-    position: fixed; /* Fija el menú en la parte superior */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Asegura que el menú quede encima del contenido */
-}
-
-/* Estilo para la lista del menú */
-#navbar ul {
-    display: flex; /* Muestra los elementos en línea */
-    list-style: none; /* Quita los puntos de la lista */
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilo para cada elemento del menú */
-#navbar ul li {
-    margin: 0 15px; /* Espaciado entre elementos */
-}
-
-/* Estilo para los enlaces del menú */
-#navbar ul li a {
-    text-decoration: none; /* Quita el subrayado */
-    color: #00ff00; /* Color verde neon */
-    font-weight: bold;
-    transition: color 0.3s; /* Animación de color */
-}
-
-/* Efecto hover */
-#navbar ul li a:hover {
-    color: #ffffff; /* Cambia el color a blanco al pasar el mouse */
-}
-
-/* Estilo para el logo */
-#navbar .logo img {
-    height: 40px; /* Ajusta el tamaño del logo */
+#contacto button:hover {
+    background-color: #ffffff;
+    transform: scale(1.1);
 }
