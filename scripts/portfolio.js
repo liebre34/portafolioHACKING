@@ -13,9 +13,10 @@ document.querySelectorAll('#navbar a').forEach(link => {
 
         if (targetSection) {
             window.scrollTo({
-                top: targetSection.offsetTop - 70, // Ajusta el desplazamiento si tienes un menú fijo
+                top: targetSection.offsetTop - 70, // Ajusta si tienes un menú fijo
                 behavior: 'smooth'
             });
         }
     });
 });
+
